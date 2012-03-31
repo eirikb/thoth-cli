@@ -4,6 +4,9 @@
     "main": "thoth-cli.js",
     "version": "0.0.1",
     "description": "Node.js client for http://thoth.io",
+    "dependencies": {
+        "request": ""
+    },
     "repository": {
         "type": "git", 
         "url": "https://github.com/eirikb/thoth-cli"
