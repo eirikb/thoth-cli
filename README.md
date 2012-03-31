@@ -27,10 +27,10 @@ npm install thoth
 ```JavaScript
 var thoth = require('thoth');
 
-thoth.create('Hello, world', function(err, id) {
+thoth.create('Hello, world', function(error, id) {
   console.log('id:', id);
 
-  thoth.read(id, function(err, data) {
+  thoth.read(id, function(error, data) {
     console.log('data', data);
   });
 });
