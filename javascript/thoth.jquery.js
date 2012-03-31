@@ -1,7 +1,7 @@
 thoth = (function() {
     var self = {};
 
-    var host = 'http://eirikb.no:3000/';
+    var host = 'http://thoth.io/';
 
     self.read = function(id, cb) {
         $.get(host + 'read/' + id, function(res) {
