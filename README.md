@@ -1,4 +1,4 @@
-Different cleints for http://thoth.io
+Different clients for http://thoth.io
 
 JavaScript
 ---
