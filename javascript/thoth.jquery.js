@@ -4,7 +4,9 @@ thoth = (function() {
     var host = 'http://eirikb.no:3000/';
 
     self.read = function(id, cb) {
-        $.get(host + 'read/' + id, cb);
+        $.get(host + 'read/' + id, function(res) {
+            if (cb) cb(null, res);
+        });
     };
 
     self.create = function(id, data, cb) {
@@ -18,7 +20,9 @@ thoth = (function() {
         $.post(host + 'create' + id, {
             data: data
         },
-        cb);
+        function(res) {
+            if (cb) cb(null, res);
+        });
     };
 
     return self;
