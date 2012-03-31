@@ -1,3 +1,4 @@
+# git submodule update --init
 # [sudo] npm install -g uglifyjs
 
 UGLIFY = uglifyjs
