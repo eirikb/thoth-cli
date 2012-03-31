@@ -4,7 +4,7 @@ JavaScript
 ---
 
 ```HTML
-<script src="https://raw.github.com/eirikb/thoth-cli/javascript/thoth.jquery.min.js"></script>
+<script src="https://raw.github.com/eirikb/thoth-cli/master/javascript/thoth.jquery.min.js"></script>
 ```
 
 ```JavaScript
