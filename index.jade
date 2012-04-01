@@ -1,0 +1,24 @@
+!!! 5
+head
+  title Github pages pastebin example
+  meta(charset='utf-8')
+  link(rel='stylesheet', href='http://twitter.github.com/bootstrap/assets/css/bootstrap.css')
+  script(src='http://code.jquery.com/jquery.min.js')
+  script(src='jquery.address-1.4.min.js')
+  script(src='https://raw.github.com/eirikb/thoth-cli/master/javascript/thoth.jquery.min.js')
+  script(src='pastebin.js')
+body
+  .container
+    header.page-header
+      h1 Github pages pastebin example 
+        small (gh-pages with a database!)
+    h2 Powered by 
+      a(href='http://thoth.io') http://thoth.io
+    .row
+      .span12
+        form.well.form-horizontal(method='post', action='http://thoth.io/create', novalidate)
+          fieldset
+            legend Create a pastebin
+            textarea#data.span7(name='data', rows=8)
+            .form-actions
+              button#create.btn.btn-primary(type='submit') Create
