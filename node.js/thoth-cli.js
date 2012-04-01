@@ -22,12 +22,16 @@ exports.create = function(id, data, cb) {
     });
 };
 
-exports.readJSON = function(id, cb) {
+exports.read = function(id, cb) {
+    var toJSON = id.match(/\./);
+
     request(host + id, function(err, res, data) {
         if (err) {
             cb(err);
         } else if (res.statusCode !== 200) {
             cb(new Error(data));
+        } else if (toJSON) {
+            cb(null, data);
         } else {
             try {
                 data = JSON.parse(data);
@@ -35,18 +39,6 @@ exports.readJSON = function(id, cb) {
             } catch(e) {
                 cb(e);
             }
-        }
-    });
-};
-
-exports.read = function(id, cb) {
-    request(host + id, function(err, res, data) {
-        if (err) {
-            cb(err);
-        } else if (res.statusCode !== 200) {
-            cb(new Error(data));
-        } else {
-            cb(null, data);
         }
     });
 };

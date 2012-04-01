@@ -14,7 +14,7 @@ describe('thoth', function() {
     });
 
     it('should read created thoth parent without error', function(done) {
-        thoth.readJSON(id, function(err, parent) {
+        thoth.read(id, function(err, parent) {
             parent.should.have.property('id');
             parent.should.have.property('versions', 1);
             done();
@@ -22,16 +22,9 @@ describe('thoth', function() {
     });
 
     it('should read created thoth version JSON without error', function(done) {
-        thoth.readJSON(id + '/1', function(err, item) {
+        thoth.read(id + '/1', function(err, item) {
             item.data.should.equal('Hello, world');
             item.should.have.property('timestamp');
-            done();
-        });
-    });
-
-    it('should read created thoth version without error', function(done) {
-        thoth.read(id + '/1', function(err, item) {
-            item.should.include('Hello, world');
             done();
         });
     });
@@ -67,7 +60,7 @@ describe('thoth', function() {
     });
 
     it('should read JSON unkown id with error', function(done) {
-        thoth.readJSON('asdf', function(err, item) {
+        thoth.read('asdf', function(err, item) {
             should.exist(err);
             should.not.exist(item);
             done();
