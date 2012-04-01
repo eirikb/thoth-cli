@@ -2,10 +2,12 @@
     "name": "thoth",
     "author": "Eirik Brandtzæg <eirikb@eirikb.no>",
     "main": "thoth-cli.js",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Node.js client for http://thoth.io",
     "dependencies": {
-        "request": ""
+        "request": "",
+        "mocha": "",
+        "should": ""
     },
     "repository": {
         "type": "git", 
