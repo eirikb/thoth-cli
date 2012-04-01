@@ -4,8 +4,10 @@ thoth = (function() {
     var host = 'http://thoth.io/';
 
     self.read = function(id, cb) {
-        $.get(host + 'read/' + id, function(res) {
+        $.get(host + id, function(res) {
             if (cb) cb(null, res);
+        }).error(function(err, type, message) {
+            cb(message);
         });
     };
 
@@ -15,13 +17,14 @@ thoth = (function() {
             data = id;
             id = '';
         }
-        if (arguments.length === 3) id = '/' + id;
 
-        $.post(host + 'create' + id, {
+        $.post(host + id, {
             data: data
         },
         function(res) {
             if (cb) cb(null, res);
+        }).error(function(err, type, message) {
+            cb(message);
         });
     };
 
